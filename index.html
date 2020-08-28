@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        (async() =>{
+            const response = await fetch(instagram.json);
+            const data = await response.json(); 
+
+            const htmlList = data.map(image =>'<li><img src="${src}"></li>').join('')
+
+            document.querySelector('.container').innerHTML = htmlList; 
+        })()
+    </script>
+</body>
+</html>
